@@ -1,12 +1,16 @@
 
 let playerScore = 0;
 let computerScore = 0;
+let roundCount = 0;
 
 const result = document.querySelector(".result");
 const cScore = document.querySelector(".cScore");
 const pScore = document.querySelector(".pScore");
 const pChoice = document.querySelector(".pChoice");
 const cChoice = document.querySelector(".cChoice");
+
+const rounds = document.querySelector(".rounds");
+const winner = document.querySelector(".winner");
 
 
 const rock = document.querySelector(".rockButton");
@@ -20,6 +24,10 @@ scissors.addEventListener("click", () => playRound("Scissors", getComputerChoice
 
 const computerChoice = getComputerChoice(3);
 
+function newGame() {
+    location.reload(true);
+}
+
 function getComputerChoice(max) {
     let result = Math.floor(Math.random() * max)
     if (result === 0) {
@@ -32,10 +40,12 @@ function getComputerChoice(max) {
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
-        pScore.textContent = "Your Score: " + playerScore;
-        cScore.textContent = "Computer Score: " + computerScore;
-        pChoice.textContent = "Your Choice: " + playerChoice;
-        cChoice.textContent = "Computer Choice: " + computerChoice;
+        roundCount++;
+        pScore.textContent = playerScore;
+        cScore.textContent = computerScore;
+        pChoice.textContent = playerChoice;
+        cChoice.textContent = computerChoice;
+        rounds.textContent = "Rounds Played: " + roundCount;
         result.textContent = "It's a tie!";
     } else if (
         (playerChoice === "Rock" && computerChoice === "Scissors") ||
@@ -43,37 +53,29 @@ function playRound(playerChoice, computerChoice) {
         (playerChoice === "Paper" && computerChoice === "Rock")
     ) {
         playerScore++;
-        pScore.textContent = "Your Score: " + playerScore;
-        cScore.textContent = "Computer Score: " + computerScore;
-        pChoice.textContent = "Your Choice: " + playerChoice;
-        cChoice.textContent = "Computer Choice: " + computerChoice;
+        roundCount++;
+        pScore.textContent = playerScore;
+        cScore.textContent = computerScore;
+        pChoice.textContent = playerChoice;
+        cChoice.textContent = computerChoice;
+        rounds.textContent = "Rounds Played: " + roundCount;
         result.textContent = "You won! " + playerChoice + " beats " + computerChoice + "!";
 
     } else {
         computerScore++;
-        pScore.textContent = "Your Score: " + playerScore;
-        cScore.textContent = "Computer Score: " + computerScore;
-        pChoice.textContent = "Your Choice: " + playerChoice;
-        cChoice.textContent = "Computer Choice: " + computerChoice;
+        roundCount++;
+        pScore.textContent = playerScore;
+        cScore.textContent = computerScore;
+        pChoice.textContent = playerChoice;
+        cChoice.textContent = computerChoice;
+        rounds.textContent = "Rounds Played: " + roundCount;
         result.textContent = "You lost! " + computerChoice + " beats " + playerChoice + "!";
     }
+    if (playerScore >= 5) {
+        winner.textContent = "You are the Winner!";
+        setTimeout(newGame, 2000)
+    } else if (computerScore >= 5) {
+        winner.textContent = "You Lose!";
+        setTimeout(newGame, 2000)
+    }
 }
-
-
-// function playGame() {
-//     for (let i = 0; i < 10; i++) {
-//         const playerChoice = getPlayerChoice();
-//         const computerChoice = getComputerChoice(3);
-//         playRound(playerChoice, computerChoice);
-//     }
-//     let finalScore;
-//     if (playerScore > computerScore) {
-//         finalScore = alert("You win the game. Final score: Player: " + playerScore + " Computer: " + computerScore)
-//     } else if (computerScore > playerScore) {
-//         finalScore = alert("You lose the game. Final score: Player: " + playerScore + " Computer: " + computerScore)
-//     } else (
-//         finalScore = alert("It's a tie. Final score: Player: " + playerScore + " Computer: " + computerScore)
-//     )
-// }
-
-// playGame()

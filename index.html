@@ -4,27 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <script src="javascript.js" defer></script>
-    <div class="title">Rock Paper Scissors</div>
+<body class="body">
+    <div class="header">
+        <div class="title">Rock Paper Scissors</div>
+    </div>
+    <div class="container1">
+        <button class="rockButton">Rock</button>
+        <button class="paperButton">Paper</button>
+        <button class="scissorsButton">Scissors</button>
+    </div>
 
-    <button class="rockButton">Rock</button>
-
-    <button class="paperButton">Paper</button>
-
-    <button class="scissorsButton">Scissors</button>
-
-    <div class="pChoice">You Chose: ...</div>
-    <div class="cChoice">Computer Chose: ...</div>
-
-    <div class="pScore">Your Score: 0</div>
-    <div class="cScore">Computer Score: 0</div>
-
-    <div class="result">Choose an option!</div>
-
+    <div class="container2">
+        <div class="result">Choose an option!</div>
+        <div class="mainGroup">
+            <div class="group1">
+                <div>Player: </div>
+                <div class="pChoice">?</div>
+            </div>
+            <div class="group2">
+                <div>Computer: </div>
+                <div class="cChoice">?</div>
+            </div>
+        </div>
+        <div class="group">
+            <div class="pScore">0</div>
+            <div class="vs">VS</div>
+            <div class="cScore">0</div>
+        </div>
+    </div>
+    <div class="end">
+        <div class="rounds">Rounds Played: 0</div>
+        <div class="winner"></div>
+    </div>
 </body>
 
 </html>
