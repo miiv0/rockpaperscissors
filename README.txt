@@ -48,9 +48,3 @@ This project is an interactive Rock Paper Scissors game where you can play again
 ## 👨‍💻 About Me
 
 Hi! I'm Michael, a self-taught developer building projects to improve my skills. Feel free to check out my other work on [my GitHub profile](https://github.com/miiv0).
-
----
-
-## 📫 Contact
-
-If you have feedback or want to connect, reach out to me on LinkedIn: [your-linkedin-url]
