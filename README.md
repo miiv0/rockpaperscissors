@@ -4,6 +4,12 @@ A simple browser-based Rock Paper Scissors game built with JavaScript, HTML, and
 
 ---
 
+### GitHub Pages:
+
+https://miiv0.github.io/rockpaperscissors/
+
+---
+
 ## 🎮 About
 
 This project is an interactive Rock Paper Scissors game where you can play against the computer. It features basic UI controls, score tracking, and a clean design. It was built as a fun way to practice JavaScript fundamentals like event handling, DOM manipulation, and game logic.
